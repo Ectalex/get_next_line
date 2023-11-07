@@ -6,7 +6,7 @@
 /*   By: albriffa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 10:01:43 by albriffa          #+#    #+#             */
-/*   Updated: 2023/11/04 15:42:05 by albriffa         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:53:56 by albriffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-
+char	*get_next_line(int fd);
+int	ft_find_n(char *str, int b);
+void	*ft_new_line(int fd, char **nl);
+int	ft_strlen(char *str);
+void	*ft_realloc(char **str, size_t new_len, char *buf);
+char	*ft_strcpy(char *dest,char *src, char *buf);
 
 #endif
