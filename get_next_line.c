@@ -6,7 +6,7 @@
 /*   By: albriffa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:26:07 by albriffa          #+#    #+#             */
-/*   Updated: 2023/11/20 15:26:09 by albriffa         ###   ########.fr       */
+/*   Updated: 2023/11/20 17:15:33 by albriffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	dest_free(ssize_t byte, char *dest)
 
 char	*get_next_line(int fd)
 {
-	static char	buff[BUFFER_SIZE + 1][BUFFER_SIZE + 1];
+	static char	buff[BUFFER_SIZE + 1];
 	int			byte;
 	char		*dest;
 
@@ -50,20 +50,20 @@ char	*get_next_line(int fd)
 	byte = 1;
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (NULL);
-	if (ft_strchr(buff[fd]) == 1)
+	if (ft_strchr(buff) == 1)
 	{
-		buff_erase(buff[fd]);
-		dest = ft_strjoin(dest, buff[fd]);
+		buff_erase(buff);
+		dest = ft_strjoin(dest, buff);
 	}
 	while (byte > 0 && ft_strchr(dest) == 0)
 	{
-		byte = read(fd, buff[fd], BUFFER_SIZE);
+		byte = read(fd, buff, BUFFER_SIZE);
 		if (byte == 0)
 			return (dest);
 		if (dest_free(byte, dest) == -43)
 			return (0);
-		buff[fd][byte] = '\0';
-		dest = ft_strjoin(dest, buff[fd]);
+		buff[byte] = '\0';
+		dest = ft_strjoin(dest, buff);
 	}
 	return (dest);
 }

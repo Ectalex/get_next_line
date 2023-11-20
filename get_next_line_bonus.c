@@ -6,7 +6,7 @@
 /*   By: albriffa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:26:25 by albriffa          #+#    #+#             */
-/*   Updated: 2023/11/20 15:26:33 by albriffa         ###   ########.fr       */
+/*   Updated: 2023/11/20 17:22:29 by albriffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ int	dest_free(ssize_t byte, char *dest)
 
 char	*get_next_line(int fd)
 {
-	static char	buff[BUFFER_SIZE + 1][BUFFER_SIZE + 1];
+	static char	buff[128][BUFFER_SIZE + 1];
 	int			byte;
 	char		*dest;
 
 	dest = NULL;
 	byte = 1;
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 128)
 		return (NULL);
 	if (ft_strchr(buff[fd]) == 1)
 	{
@@ -74,9 +74,12 @@ int	main(int argc, char **argv)
 	int	i = 0;
 
 	fd = open(argv[1], O_RDONLY);
-	while (i++ < 5)
+	if (argc)
 	{
-		printf("%s", get_next_line(fd));
+		while (i++ < 5)
+		{
+			printf("%s", get_next_line(fd));
+		}
+		close(fd);
 	}
-	close(fd);
 }*/
