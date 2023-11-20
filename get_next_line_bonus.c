@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:38:27 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/11/20 15:03:21 by albriffa         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:17:03 by albriffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <stdio.h>
 
 void	buff_erase(char *buff)
@@ -68,3 +68,16 @@ char	*get_next_line(int fd)
 	}
 	return (dest);
 }
+/*
+int	main(int argc, char **argv)
+{
+	int	fd;
+	int	i = 0;
+
+	fd = open(argv[1], O_RDONLY);
+	while (i++ < 5)
+	{
+		printf("%s", get_next_line(fd));
+	}
+	close(fd);
+}*/
