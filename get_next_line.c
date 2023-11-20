@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albriffa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 13:38:27 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/11/20 15:03:21 by albriffa         ###   ########.fr       */
+/*   Created: 2023/11/20 15:26:07 by albriffa          #+#    #+#             */
+/*   Updated: 2023/11/20 15:26:09 by albriffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 void	buff_erase(char *buff)
 {
